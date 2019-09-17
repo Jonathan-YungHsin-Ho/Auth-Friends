@@ -34,7 +34,7 @@ export default function EditFriend() {
   useEffect(() => dispatch(getData()), [isPutting]);
 
   return (
-    <div>
+    <div className='friend-form'>
       <h2>Edit a Friend</h2>
       <form onSubmit={handleSubmit}>
         <select onChange={handleSelect}>

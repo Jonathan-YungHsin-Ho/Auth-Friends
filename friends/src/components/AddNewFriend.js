@@ -22,7 +22,7 @@ export default function AddNewFriend() {
   useEffect(() => dispatch(getData()), [isPosting]);
 
   return (
-    <div>
+    <div className='friend-form'>
       <h2>Add New Friend</h2>
       <form onSubmit={handleSubmit}>
         <input
