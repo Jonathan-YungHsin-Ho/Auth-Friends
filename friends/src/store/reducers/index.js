@@ -5,6 +5,12 @@ import {
   POST_DATA_START,
   POST_DATA_SUCCESS,
   POST_DATA_FAILURE,
+  DELETE_DATA_START,
+  DELETE_DATA_SUCCESS,
+  DELETE_DATA_FAILURE,
+  PUT_DATA_START,
+  PUT_DATA_SUCCESS,
+  PUT_DATA_FAILURE,
 } from '../actions';
 
 const initialState = {
@@ -47,6 +53,38 @@ export const reducer = (state = initialState, action) => {
         isPosting: false,
       };
     case POST_DATA_FAILURE:
+      return {
+        ...state,
+        error: action.payload,
+      };
+    case DELETE_DATA_START:
+      return {
+        ...state,
+        isDeleting: true,
+        error: '',
+      };
+    case DELETE_DATA_SUCCESS:
+      return {
+        ...state,
+        isDeleting: false,
+      };
+    case DELETE_DATA_FAILURE:
+      return {
+        ...state,
+        error: action.payload,
+      };
+    case PUT_DATA_START:
+      return {
+        ...state,
+        isPutting: true,
+        error: '',
+      };
+    case PUT_DATA_SUCCESS:
+      return {
+        ...state,
+        isPutting: false,
+      };
+    case PUT_DATA_FAILURE:
       return {
         ...state,
         error: action.payload,

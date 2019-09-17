@@ -44,8 +44,9 @@ form {
   color: #fffa23;
 }
 
-.friends-page h2 {
-  text-align: center;
+.friends-page {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .friends-wrapper {

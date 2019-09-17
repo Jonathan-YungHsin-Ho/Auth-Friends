@@ -17,12 +17,6 @@ export default function AddNewFriend() {
     e.preventDefault();
     setNewFriend({ ...newFriend, id: Date.now() });
     dispatch(postData(newFriend));
-    // axiosWithAuth()
-    //   .post('/friends', newFriend)
-    //   .then(res => {
-    //     console.log(res);
-    //   })
-    //   .catch(err => console.log(err));
   };
 
   useEffect(() => dispatch(getData()), [isPosting]);
@@ -49,7 +43,7 @@ export default function AddNewFriend() {
           placeholder='...email'
           onChange={handleChange}
         />
-        <button>Submit</button>
+        <button>Add Friend</button>
       </form>
     </div>
   );
