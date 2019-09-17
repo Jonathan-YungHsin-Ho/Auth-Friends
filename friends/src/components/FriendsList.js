@@ -21,11 +21,13 @@ export default function FriendsList() {
   };
 
   return (
-    <div>
+    <div className='friends-page'>
       <h2>Friends List</h2>
-      {data.map(friend => (
-        <FriendCard key={friend.id} friend={friend} />
-      ))}
+      <div className='friends-wrapper'>
+        {data.map(friend => (
+          <FriendCard key={friend.id} friend={friend} />
+        ))}
+      </div>
     </div>
   );
 }
