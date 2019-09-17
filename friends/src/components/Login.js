@@ -21,12 +21,12 @@ export default function Login(props) {
       .post('/login', credentials)
       .then(res => {
         localStorage.setItem('token', res.data.payload);
-        props.history.push('/friendslist');
+        props.history.push('/friendspage');
       })
       .catch(err => console.log(err));
   };
 
-  if (localStorage.getItem('token')) return <Redirect to='/friendslist' />;
+  if (localStorage.getItem('token')) return <Redirect to='/friendspage' />;
 
   return (
     <div>

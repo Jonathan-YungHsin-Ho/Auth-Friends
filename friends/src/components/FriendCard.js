@@ -1,7 +1,6 @@
 import React from 'react';
 
 export default function FriendCard(props) {
-  console.log(props.friend);
   return (
     <div className='friend-card'>
       <h3>{props.friend.name}</h3>

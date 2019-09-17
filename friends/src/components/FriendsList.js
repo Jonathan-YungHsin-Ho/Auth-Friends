@@ -1,24 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
-import { axiosWithAuth } from '../utils/axiosWithAuth';
+import { getData } from '../store/actions';
 
 import FriendCard from './FriendCard';
 
 export default function FriendsList() {
-  const [data, setData] = useState([]);
+  const data = useSelector(state => state.data);
+  const dispatch = useDispatch();
 
-  useEffect(() => {
-    getData();
-  }, []);
-
-  const getData = () => {
-    axiosWithAuth()
-      .get('/friends')
-      .then(res => {
-        setData(res.data);
-      })
-      .catch(err => console.log(err));
-  };
+  useEffect(() => dispatch(getData()), []);
 
   return (
     <div className='friends-page'>
